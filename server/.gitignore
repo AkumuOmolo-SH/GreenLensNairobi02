@@ -87,3 +87,11 @@ dist/
 *.egg-info/
 .eggs/
 MANIFEST
+
+# Environment and secrets
+*.env
+*.yaml
+*.toml
+*.json
+venv/
+__pycache__/
