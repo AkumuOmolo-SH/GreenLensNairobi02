@@ -42,11 +42,14 @@ export default function ProjectForm({
     };
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/development_plans", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://greenlens-nairobi-1033586369649.europe-west2.run.app/development_plans",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await response.json();
 

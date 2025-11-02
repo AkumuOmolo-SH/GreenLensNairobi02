@@ -57,7 +57,7 @@ export default function MetricsMapView({ onPolygonSelect }) {
 
   // Load metrics JSON from backend
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/data/polygons")
+    fetch("https://greenlens-nairobi-1033586369649.europe-west2.run.app/data/polygons")
       .then((res) => res.json())
       .then((data) => {
         setPolygons(data);

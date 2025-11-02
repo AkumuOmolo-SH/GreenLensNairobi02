@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-
 export default function ResultsComponent({ planId, projectArea }) {
   const router = useRouter();
   const [analysis, setAnalysis] = useState(null);
@@ -22,7 +21,7 @@ export default function ResultsComponent({ planId, projectArea }) {
         console.log(`Triggering POST analysis for plan ${planId}...`);
 
         const postRes = await fetch(
-          `http://127.0.0.1:5000/gee/development_plans/${planId}/analyze`,
+          `https://greenlens-nairobi-1033586369649.europe-west2.run.app/gee/development_plans/${planId}/analyze`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -61,7 +60,7 @@ export default function ResultsComponent({ planId, projectArea }) {
         console.log(`Checking for existing analysis for plan ${planId}...`);
 
         const getRes = await fetch(
-          `http://127.0.0.1:5000/gee/development_plans/${planId}/analyze`
+          `https://greenlens-nairobi-1033586369649.europe-west2.run.app/gee/development_plans/${planId}/analyze`
         );
 
         if (getRes.ok) {
@@ -93,23 +92,22 @@ export default function ResultsComponent({ planId, projectArea }) {
   }, [planId]);
 
   if (loading || analyzing) {
-  return (
-    <div className="p-6 bg-[#112C23] rounded-2xl shadow-md max-w-xl mx-auto mt-6">
-      <div className="text-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-4 border-[#FFFFFF] border-t-transparent mx-auto mb-4"></div>
-        <p className="text-lg font-semibold text-[#FFFFFF]">
-          {analyzing
-            ? "Running AI Earth Engine analysis..."
-            : "Loading results..."}
-        </p>
-        <p className="text-sm text-[#FFFFFF] opacity-80 mt-2">
-          This may take 10–30 seconds
-        </p>
+    return (
+      <div className="p-6 bg-[#112C23] rounded-2xl shadow-md max-w-xl mx-auto mt-6">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-4 border-[#FFFFFF] border-t-transparent mx-auto mb-4"></div>
+          <p className="text-lg font-semibold text-[#FFFFFF]">
+            {analyzing
+              ? "Running AI Earth Engine analysis..."
+              : "Loading results..."}
+          </p>
+          <p className="text-sm text-[#FFFFFF] opacity-80 mt-2">
+            This may take 10–30 seconds
+          </p>
+        </div>
       </div>
-    </div>
-  );
-}
-
+    );
+  }
 
   if (error) {
     return (

@@ -32,7 +32,7 @@ export default function MapView({ onPolygonSelect }) {
   const [selectedPolygon, setSelectedPolygon] = useState(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/polygons")
+    fetch("https://greenlens-nairobi-1033586369649.europe-west2.run.app/polygons")
       .then((res) => res.json())
       .then((data) => setPolygons(data))
       .catch((err) => console.error("Error loading polygons:", err));

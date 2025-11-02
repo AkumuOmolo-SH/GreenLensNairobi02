@@ -12,7 +12,7 @@ function LanagataAreaAnalysis() {
   });
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/areas/langata/insights")
+    fetch("https://greenlens-nairobi-1033586369649.europe-west2.run.app/areas/langata/insights")
       .then((res) => res.json())
       .then((data) => {
         if (data.percentages) {

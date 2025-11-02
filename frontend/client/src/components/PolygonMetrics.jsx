@@ -8,7 +8,9 @@ export default function PolygonMetrics({ selectedPolygon }) {
   useEffect(() => {
     if (!selectedPolygon) return;
 
-    fetch("http://127.0.0.1:5000/data/polygons")
+    fetch(
+      "https://greenlens-nairobi-1033586369649.europe-west2.run.app/data/polygons"
+    )
       .then((res) => res.json())
       .then((data) => {
         const polyData = data.find(
@@ -34,9 +36,8 @@ export default function PolygonMetrics({ selectedPolygon }) {
       </h1>
 
       {/* ZONE NAME */}
-      <p className="text-[15px] text-[#515151] font-semibold ml-15 mb-4 border border-[#515151] rounded-full p-2 px-6 max-w-fit inline-block text-center"
-      >
-      {selectedPolygon.polygon_name?.toUpperCase()}
+      <p className="text-[15px] text-[#515151] font-semibold ml-15 mb-4 border border-[#515151] rounded-full p-2 px-6 max-w-fit inline-block text-center">
+        {selectedPolygon.polygon_name?.toUpperCase()}
       </p>
 
       {/* LATEST (2025) */}

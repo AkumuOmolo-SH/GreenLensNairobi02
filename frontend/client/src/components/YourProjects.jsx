@@ -19,7 +19,7 @@ export default function AllProjects() {
   const fetchAnalysis = async (projId) => {
     try {
       const res = await fetch(
-        `http://127.0.0.1:5000/development_plans/${projId}/analysis`
+        `https://greenlens-nairobi-1033586369649.europe-west2.run.app/development_plans/${projId}/analysis`
       );
       if (res.ok) {
         const data = await res.json();
@@ -31,7 +31,9 @@ export default function AllProjects() {
   };
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/development_plans")
+    fetch(
+      "https://greenlens-nairobi-1033586369649.europe-west2.run.app/development_plans"
+    )
       .then((res) => res.json())
       .then((data) => {
         setProjects(data);
@@ -54,9 +56,12 @@ export default function AllProjects() {
 
   const handleDelete = async (id) => {
     if (!confirm("Are you sure you want to delete this project?")) return;
-    await fetch(`http://127.0.0.1:5000/development_plans/${id}`, {
-      method: "DELETE",
-    });
+    await fetch(
+      `https://greenlens-nairobi-1033586369649.europe-west2.run.app/development_plans/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
     setProjects(projects.filter((p) => p.id !== id));
   };
 
@@ -68,14 +73,17 @@ export default function AllProjects() {
 
   const handleSave = async (id) => {
     try {
-      const res = await fetch(`http://127.0.0.1:5000/development_plans/${id}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          title: editTitle,
-          description: editDescription,
-        }),
-      });
+      const res = await fetch(
+        `https://greenlens-nairobi-1033586369649.europe-west2.run.app/development_plans/${id}`,
+        {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            title: editTitle,
+            description: editDescription,
+          }),
+        }
+      );
       const updated = await res.json();
       setProjects((prev) => prev.map((p) => (p.id === id ? updated : p)));
       setEditingId(null);
