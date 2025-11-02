@@ -17,7 +17,7 @@ class Config:
 
     # Database
     SQLALCHEMY_DATABASE_URI = os.getenv(
-        "DATABASE_URI",
+        "DATABASE_URL",
         'sqlite:///' + os.path.join(INSTANCE_DIR, 'greenlens.db')
     )
     SQLALCHEMY_TRACK_MODIFICATIONS = False

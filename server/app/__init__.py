@@ -1,5 +1,6 @@
 from flask import Flask, send_from_directory
 from app.config import Config
+from flask_cors import CORS
 from app.extensions import db, migrate, jwt, cors
 from app.models import DevelopmentPlan, Area, Polygon, Report
 from app.routes.auth_routes import auth

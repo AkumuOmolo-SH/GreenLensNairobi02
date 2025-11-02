@@ -12,7 +12,7 @@ class Area(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=True, unique=True)
     polygon_id = db.Column(db.Integer, db.ForeignKey(
-        'polygons.id'), nullable=False)
+        'polygons.id'), nullable=True)
 
     # stats
     avg_temp = db.Column(db.Float)
@@ -36,7 +36,7 @@ class Area(db.Model, SerializerMixin):
     development_plans = db.relationship(
         'DevelopmentPlan', back_populates='area', cascade='all, delete-orphan')
 
-    serialize_rules = ( '-development_plans.area') #'-insights.area',
+    serialize_rules = ('-development_plans.area')  # '-insights.area',
 
     def to_dict(self):
         return {
