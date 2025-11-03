@@ -16,7 +16,8 @@ app = create_app()
 
 # Fix: origins should be a list, and we need to specify methods and headers
 CORS(app,
-     origins=["https://green-lens-nairobi.vercel.app"],
+     origins=[
+         "https://green-lens-nairobi02-4q4s00hb7-akumuomolo-shs-projects.vercel.app"],
      methods=["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
      allow_headers=["Content-Type", "Authorization"],
      supports_credentials=True)
