@@ -30,23 +30,25 @@ export default function CommunityPostCard({
 
   const formattedDate = formatDate(created_at);
 
-  // Handle image URL 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL_STATIC || "https://greenlens-nairobi-1033586369649.europe-west2.run.app/" ;
+  // Handle image URL
+  const BASE_URL =
+    process.env.NEXT_PUBLIC_API_URL_STATIC ||
+    "https://greenlens-nairobi-1033586369649.europe-west2.run.app";
 
-const imageSrc = image_url
-  ? image_url.startsWith("http")
-    ? image_url
-    : `${BASE_URL}/static/uploads/${image_url}`
-  : null;
-
+  const imageSrc = image_url
+    ? image_url.startsWith("http")
+      ? image_url
+      : `${BASE_URL}/static/uploads/${image_url}`
+    : null;
 
   // Check user ownership
   const isOwner = currentUserId && currentUserId === user_id;
 
   return (
-    <div 
-    id={`post-${id}`}
-    className="bg-[#0F2A21] rounded-[35px] overflow-hidden shadow-xl w-full mb-10 scroll-mt-32">
+    <div
+      id={`post-${id}`}
+      className="bg-[#0F2A21] rounded-[35px] overflow-hidden shadow-xl w-full mb-10 scroll-mt-32"
+    >
       {/* Header Section */}
       <div className="p-8 pb-4">
         <div className="flex justify-between items-start">
