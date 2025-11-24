@@ -1,4 +1,4 @@
-# GreenLens Lang`ata
+# GreenLens Nairobi
 
 **GreenLens** is a full-stack web application that combines environmental awareness, community interaction, and spatial visualization.  
 Built using **Next.js (Frontend)**, **Flask (Backend)**, and **Leaflet.js (Mapping)**, the project aims to help users explore and contribute to environmental development initiatives.
@@ -36,7 +36,10 @@ Users can explore sustainability projects, engage with community discussions, an
 ## Preview
 <img width="1365" height="682" alt="image" src="https://github.com/user-attachments/assets/0ddc56c4-e1d7-4527-87ff-924edfd30e9d" />
 
----
+
+<img width="1854" height="960" alt="Screenshot from 2025-11-24 17-56-28" src="https://github.com/user-attachments/assets/93504a37-6012-445b-b369-eaab73230bf6" />
+
+<img width="1854" height="960" alt="Screenshot from 2025-11-24 17-56-41" src="https://github.com/user-attachments/assets/ee538f63-f2a4-4c62-8f2d-1c2c705f6f6e" />
 
 ## Features
 
